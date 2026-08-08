@@ -1,0 +1,42 @@
+<?php
+    require('actions/users/securityAction.php');
+    require('actions/questions/publishQuestionAction.php');
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<?php include 'includes/head.php'; ?>
+<body>
+   <?php include 'includes/navbar.php'; ?>
+    
+    <br><br>
+    <form class="container" method="post">
+
+      <?php 
+       if(isset($errorMsg)){
+         echo '<p>'.$errorMsg.'</p>';
+        }elseif(isset($succesMsg)){
+         echo '<p>'.$succesMsg.'</p>';
+        } 
+      ?>
+    
+     <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Object de la question</label>
+        <input type="text" id="exampleFormControlInput1" class="form-control" name="title">
+     </div>
+     <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Description de la question</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" name="description"></textarea>
+     </div>
+     <div class="mb-3">
+        <label for="exampleFormControlTextarea2" class="form-label">Que voullez-vous dire ??</label>
+        <textarea class="form-control" id="exampleFormControlTextarea2" name="content"></textarea>
+     </div>
+
+     <button type="submit" class="btn btn-primary" name="validate">Publier ma question</button>
+     <br><br>
+
+     
+    </form>
+    
+</body>
+</html>
